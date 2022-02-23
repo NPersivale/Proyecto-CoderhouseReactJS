@@ -1,7 +1,12 @@
+$color1: rgb(141, 182, 182);
+$color2: yellow;
+$color3: red;
+
 *{
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    background-color: $color1;
 }
 
 html, body, #root{
