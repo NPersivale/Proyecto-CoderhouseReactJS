@@ -1,8 +1,12 @@
 import React from 'react'
 
-const Main = () => {
+const Main = (props) => {
     return (
-    <div>Main</div>
+    <main>
+        <div>
+            <h4>This is main</h4>
+        </div>
+    </main>
     )
 }
 
