@@ -7,9 +7,9 @@ function App(){
     return (
     <>
         <Header/>
-        <Main/>
-        <ItemListContainer name="Horacio" age={20}/>
-        <ItemListContainer name="Maria" age={34}/>
+        {/* <Main/> */}
+        <ItemListContainer initial={0} name="Jean" price={30} stock={5}/>
+        <ItemListContainer initial={0} name="Shirt" price={35} stock={3}/>
         <Footer/>
     </>
     )

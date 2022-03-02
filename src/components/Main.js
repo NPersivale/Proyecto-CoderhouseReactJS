@@ -1,12 +1,12 @@
 import React from 'react'
 
+
 const Main = (props) => {
+
     return (
-    <main>
-        <div>
-            <h4>This is main</h4>
-        </div>
-    </main>
+        <main>
+            <h2>This is main (Placeholder)</h2>
+        </main>
     )
 }
 

@@ -27,3 +27,12 @@ main, #ItemListContainer{
     height: 2rem;
     margin: 0 1rem 0 1rem;
 }
+
+#ItemListContainer{
+    display: inline-flex;
+}
+
+.ButtonGroup{
+    background-color: white;
+    padding: 0.4rem;
+}
