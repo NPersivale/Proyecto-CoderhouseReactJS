@@ -6,7 +6,7 @@
 - MaterialUI (v5.4.4 +)
 
 ## Project Diagram:
-![Proyecto-CoderHouseReact js drawio](https://user-images.githubusercontent.com/67163082/156401300-22b550dd-ab37-4160-8164-1dd3692f303d.png)
+![Proyecto-CoderHouseReact js drawio](https://user-images.githubusercontent.com/67163082/156402366-2b0c6d80-0a7c-40e2-9d8b-96600dd36b9d.png)
 
 
 
