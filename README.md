@@ -1,3 +1,15 @@
+# Important Project Information
+
+## Required Libraries and Frameworks:
+- Node-SASS (v7.0.1 +)
+- React-Bootstrap (v2.1.2 +)
+- MaterialUI (v5.4.4 +)
+
+## Project Diagram:
+![Proyecto-CoderHouseReact js drawio](https://user-images.githubusercontent.com/67163082/156401300-22b550dd-ab37-4160-8164-1dd3692f303d.png)
+
+
+
 # Getting Started with Create React App
 
 This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
