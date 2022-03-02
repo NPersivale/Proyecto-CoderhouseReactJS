@@ -8,14 +8,10 @@ const ItemListContainer = (props) => {
 
     const subtractAmount = () => {
         setCounter(prevCount => prevCount - 1);
-        { counter - 1 < props.stock ? setDisableStock(false) : setDisableStock(true) }
-        { counter - 1 <= 0 ? setDisableNegative(true) : setDisableNegative(false) }
     }
 
     const addAmount = () => {
         setCounter(prevCount => prevCount + 1);
-        { counter + 1 < props.stock ? setDisableStock(false) : setDisableStock(true) }
-        { counter + 1 < 0 ? setDisableNegative(true) : setDisableNegative(false) }
     }
 
     const addItem = () => {
@@ -31,8 +27,6 @@ const ItemListContainer = (props) => {
     }
 
     const [counter, setCounter] = useState(props.initial);
-    const [disableStock, setDisableStock] = useState(false);
-    const [disableNegative, setDisableNegative] = useState(true);
 
     return (
         <div id="ItemListContainer">
@@ -43,15 +37,9 @@ const ItemListContainer = (props) => {
                     <p>Available Stock: {props.stock}</p>
                     <p>Units to purchase: {counter}</p>
                     <ButtonGroup className="ButtonGroup" variant="text" aria-label="text button group">
-                        {disableNegative ?
-                            <Button onClick={subtractAmount} variant="contained" color="error" disabled>-</Button> :
-                            <Button onClick={subtractAmount} variant="contained" color="error">-</Button>
-                        }
+                        <Button onClick={subtractAmount} variant="contained" color="error" disabled={counter === 0}>-</Button>
                         <Button onClick={addItem}>Add To Cart</Button>
-                        {disableStock ?
-                            <Button onClick={addAmount} variant="contained" color="success" disabled>+</Button> :
-                            <Button onClick={addAmount} variant="contained" color="success">+</Button>
-                        }
+                        <Button onClick={addAmount} variant="contained" color="success" disabled={counter === props.stock}>+</Button>
                     </ButtonGroup>
                 </div>
             </Container >
