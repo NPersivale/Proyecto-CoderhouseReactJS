@@ -1,3 +1,5 @@
+@import url(//fonts.googleapis.com/css?family=Roboto:300,400,500,700&display=swap); 
+
 $color1: rgb(192, 192, 192);
 $color2: rgb(228, 228, 228);
 $color3: red;
@@ -6,6 +8,7 @@ $color3: red;
     margin: 0;
     padding: 0;
     box-sizing: border-box;
+    font-family: "Roboto";
 }
 
 main{
@@ -49,20 +52,6 @@ header {
     background-color: white;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
-
-
-    // .upperItem{
-    //     flex-wrap: wrap;
-    //     align-items: flex-start;
-    //     border-style: solid;
-    // }
-
-    // .lowerItem{
-    //     flex-wrap: wrap;
-    //     align-items: flex-end;
-    //     border-style: solid;
-    //     border-color: red;
-    // }
 }
 
 #ItemListContainer{
@@ -76,7 +65,12 @@ header {
     }
 
     #loading{
+        display: inline-flex;
         padding: 5rem 0 0 27rem;
+
+        h2{
+            padding-left: 1rem;
+        }
     }
 }
 
