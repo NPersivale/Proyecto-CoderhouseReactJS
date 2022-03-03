@@ -1,11 +1,11 @@
-import React from 'react'
+import { React , useState } from "react"
+import ItemListContainer from "./ItemListContainer";
 
-
-const Main = (props) => {
+const Main = () => {
 
     return (
         <main>
-            <h2>This is main (Placeholder)</h2>
+            <ItemListContainer/>
         </main>
     )
 }

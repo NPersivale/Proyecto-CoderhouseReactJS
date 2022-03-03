@@ -16,10 +16,19 @@ header, footer{
     background-color: $color1;
 }
 
+footer{
+    padding: 1rem 0 0.1rem 0;
+    text-align: center;
+}
+
 main, #ItemListContainer{
     background-color: $color2;
     padding: 2rem 0 2rem 0;
     margin: 0.5rem;
+}
+
+header {
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
 
 #shoppingCart{
@@ -30,9 +39,21 @@ main, #ItemListContainer{
 
 #ItemListContainer{
     display: inline-flex;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    text-align: center;
+    height: 32rem;
+
+    h3{
+        flex-wrap: wrap;
+    }
+
+    img, h3{
+        width: 15rem;
+    }
 }
 
 .ButtonGroup{
     background-color: white;
     padding: 0.4rem;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 }
