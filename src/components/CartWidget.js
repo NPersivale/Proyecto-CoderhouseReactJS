@@ -1,8 +1,8 @@
-import pic from "../assets/shoppingcart.png"
+import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
 
 const CartWidget = () => {
     return (
-        <img id="shoppingCart" src={pic} />
+        <ShoppingCartOutlinedIcon id="cartIcon"/>
     )
 }
 
