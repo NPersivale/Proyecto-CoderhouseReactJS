@@ -1,10 +1,9 @@
 import NavBar from "./NavBar"
 
-
 const Header = () => {
     return (
         <header>
-            <NavBar sticky="top"/>
+            <NavBar/>
         </header>
     )
 }

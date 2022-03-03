@@ -1,4 +1,4 @@
-import { ButtonGroup , Container , Button } from "@mui/material";
+import { ButtonGroup, Button } from "@mui/material";
 import { useState } from 'react';
 
 const Item = (props) => {
@@ -23,7 +23,7 @@ const Item = (props) => {
     }
 
     return (
-        <Container maxWidth="md">
+        <div id="storeItem">
             <h3>{props.name}</h3>
             <img src={props.img} />
             <p>Price: ${props.price}</p>
@@ -36,7 +36,7 @@ const Item = (props) => {
                     <Button onClick={addAmount} variant="contained" color="success" disabled={counter === props.stock}>+</Button>
                 </ButtonGroup>
             </div>
-        </Container >
+        </div>
     )
 }
 

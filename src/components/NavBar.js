@@ -1,4 +1,4 @@
-import { Container, Navbar, Nav, NavDropdown, Form, FormControl, Button } from "react-bootstrap";
+import { Container, Navbar, Nav, Form, FormControl, Button } from "react-bootstrap";
 import CartWidget from "./CartWidget";
 
 const NavBar = () => {
@@ -7,7 +7,7 @@ const NavBar = () => {
             <Navbar id="navbar" expand="lg">
                 <Container fluid>
                 <CartWidget />
-                    <Navbar.Brand href="#">Nicolas Persivale</Navbar.Brand>
+                    <Navbar.Brand href="#">JustGaming</Navbar.Brand>
                     <Navbar.Toggle aria-controls="navbarScroll" />
                     <Navbar.Collapse id="navbarScroll">
                         <Nav
@@ -16,17 +16,10 @@ const NavBar = () => {
                             navbarScroll
                         >
                             <Nav.Link href="#action1">Home</Nav.Link>
-                            <Nav.Link href="#action2">About Me</Nav.Link>
-                            <NavDropdown title="Portfolio" id="navbarScrollingDropdown">
-                                <NavDropdown.Item href="#action3">Web Development</NavDropdown.Item>
-                                <NavDropdown.Item href="#action4">UX/UI</NavDropdown.Item>
-                                <NavDropdown.Divider />
-                                <NavDropdown.Item href="#action5">
-                                    Python
-                                </NavDropdown.Item>
-                            </NavDropdown>
-                            <Nav.Link href="#" disabled>
-                                Contact Me
+                            <Nav.Link href="#action2">Store</Nav.Link>
+                            <Nav.Link href="#action2">About Us</Nav.Link>
+                            <Nav.Link href="#">
+                                Contact Us
                             </Nav.Link>
                         </Nav>
                         <Form className="d-flex">

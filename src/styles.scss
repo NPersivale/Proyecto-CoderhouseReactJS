@@ -8,6 +8,10 @@ $color3: red;
     box-sizing: border-box;
 }
 
+main{
+    min-height: 83%;
+}
+
 html, body, #root{
     height: 100vh;
 }
@@ -23,30 +27,56 @@ footer{
 
 main, #ItemListContainer{
     background-color: $color2;
-    padding: 2rem 0 2rem 0;
-    margin: 0.5rem;
 }
 
 header {
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    position: fixed;
+    z-index: 100;
+    width: 100%;
 }
 
 #cartIcon{
     margin: 0 1rem 0 1rem;
 }
 
-#ItemListContainer{
-    display: inline-flex;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+#storeItem{
+    max-width: 17rem;
+    margin: 2rem;
+    padding: 2rem;
     text-align: center;
-    height: 32rem;
+    display: grid;
+    background-color: white;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+    justify-content: center;
 
-    h3{
-        flex-wrap: wrap;
-    }
+
+    // .upperItem{
+    //     flex-wrap: wrap;
+    //     align-items: flex-start;
+    //     border-style: solid;
+    // }
+
+    // .lowerItem{
+    //     flex-wrap: wrap;
+    //     align-items: flex-end;
+    //     border-style: solid;
+    //     border-color: red;
+    // }
+}
+
+#ItemListContainer{
+    padding-top: 3rem;
+    display: inline-flex;
+    justify-content: space-evenly;
+    flex-wrap: wrap;
 
     img, h3{
         width: 15rem;
+    }
+
+    #loading{
+        padding: 5rem 0 0 27rem;
     }
 }
 
