@@ -4,6 +4,7 @@
 - Node-SASS (v7.0.1 +)
 - React-Bootstrap (v2.1.2 +)
 - MaterialUI (v5.4.4 +)
+- Material Icons (v5.4.4 +)
 
 ## Project Diagram:
 ![Proyecto-CoderHouseReact js drawio](https://user-images.githubusercontent.com/67163082/156402366-2b0c6d80-0a7c-40e2-9d8b-96600dd36b9d.png)
