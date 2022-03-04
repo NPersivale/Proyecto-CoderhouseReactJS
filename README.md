@@ -7,7 +7,7 @@
 - Material Icons (v5.4.4 +)
 
 ## Project Diagram:
-![Proyecto-CoderHouseReact js drawio (2)](https://user-images.githubusercontent.com/67163082/156668738-49c86722-ea62-492c-bcd7-5043b5d8285e.png)
+![Proyecto-CoderHouseReact js drawio (3)](https://user-images.githubusercontent.com/67163082/156798701-11ee65e6-5163-4cda-b29a-5560aa8a5078.png)
 
 
 
