@@ -14,18 +14,33 @@ let productsInitial = [
 const ItemList = () => {
 
     const [loading, setLoading] = useState(true);
+    const [error, setError] = useState(false);
     const [products, setProducts] = useState([]);
 
     useEffect(() => {
-        setTimeout(() => {
-            setProducts(productsInitial);
-            setLoading(false);
-        }, 2000)
-    }, []);
+        const PromiseTest = new Promise((res, rej) => {
+            setTimeout(() => {
+                res(productsInitial);
+            }, 2000)
+        })
+
+        PromiseTest
+            .then((res) => {
+                setProducts(productsInitial);
+            })
+            .catch((rej) => {
+                setError(true);
+            })
+            .finally(() => {
+                setLoading(false);
+            })
+    }, [])
+
 
     return (
         <>
             {loading ? <div id="loading"><CircularProgress color="inherit" /><h2>Loading, please wait...</h2></div> : null}
+            {error ? <h2>Error when trying to load the page, please try again...</h2> : null}
             {products.map((product) => {
                 return <Item key={product.id} name={product.name} price={product.price} stock={product.stock} img={product.img} />
             })}
