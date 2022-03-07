@@ -2,7 +2,6 @@
 
 ## Required Libraries and Frameworks:
 - Node-SASS (v7.0.1 +)
-- React-Bootstrap (v2.1.2 +)
 - MaterialUI (v5.4.4 +)
 - Material Icons (v5.4.4 +)
 
