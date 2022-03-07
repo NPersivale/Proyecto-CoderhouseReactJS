@@ -6,8 +6,7 @@
 - Material Icons (v5.4.4 +)
 
 ## Project Diagram:
-![Proyecto-CoderHouseReact js drawio (3)](https://user-images.githubusercontent.com/67163082/156798701-11ee65e6-5163-4cda-b29a-5560aa8a5078.png)
-
+![Proyecto-CoderHouseReact js drawio](https://user-images.githubusercontent.com/67163082/157131417-e6771cb0-5f0d-4db4-90f3-55933d9568f5.png)
 
 
 # Getting Started with Create React App
