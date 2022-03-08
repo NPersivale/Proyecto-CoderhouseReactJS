@@ -1,13 +1,14 @@
-import { React , useState } from "react"
 import ItemListContainer from "./ItemListContainer";
 import BackToTop from "./BackToTop";
+import ItemDetailContainer from "./ItemDetailContainer";
 
 const Main = () => {
 
     return (
         <main>
-            <BackToTop/>
-            <ItemListContainer/>
+            <BackToTop />
+            <ItemListContainer />
+            <ItemDetailContainer />
         </main>
     )
 }

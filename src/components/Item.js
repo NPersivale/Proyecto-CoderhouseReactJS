@@ -10,7 +10,7 @@ const Item = (props) => {
             <p>Price: ${props.price}</p>
             <div>
                 <p>Available Stock: {props.stock}</p>
-                <ItemCounter stock={props.stock}/>
+                <ItemCounter stock={props.stock} />
             </div>
         </div>
     )
