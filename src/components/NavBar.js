@@ -12,8 +12,10 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
+import { NavLink } from "react-router-dom"
 
-const pages = ['About Us', 'Products', 'Contact Us'];
+
+const pages = [{ name: "All Products", url: "/" }, { name: "Escape From Tarkov", url: "/game/EFT" }, { name: "iRacing", url: "/game/iRacing" }, { name: "Star Citizen", url: "/game/StarCitizen" }];
 const settings = ['Profile', 'Account', 'Past Orders', 'Logout'];
 
 const NavBar = () => {
@@ -79,8 +81,8 @@ const NavBar = () => {
                             }}
                         >
                             {pages.map((page) => (
-                                <MenuItem key={page} onClick={handleCloseNavMenu}>
-                                    <Typography textAlign="center">{page}</Typography>
+                                <MenuItem key={page.name} onClick={handleCloseNavMenu}>
+                                    <NavLink className="navLink" to={page.url}>{page.name}</NavLink>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -93,15 +95,17 @@ const NavBar = () => {
                     >
                         <img id="jgLogo" src="/assets/justgaminglogo.png" alt="" />
                     </Typography>
-                    <CartWidget />
+                    <NavLink id="cartIcon" to="/cart/">
+                        <CartWidget />
+                    </NavLink>
                     <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
-                            <Button
-                                key={page}
+                            <Button id="navButton"
+                                key={page.name}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'black', display: 'block' }}
                             >
-                                {page}
+                                <NavLink to={page.url}>{page.name}</NavLink>
                             </Button>
                         ))}
                     </Box>
