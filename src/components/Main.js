@@ -13,14 +13,12 @@ const Main = () => {
         <>
             <main>
                 <BackToTop />
-
                 <Routes>
                     <Route path="/" element={<ItemListContainer />} />
                     <Route path="/game/:game" element={<ItemListContainer />} />
                     <Route path="/cart/" element={<Cart />} />
-                    <Route path="/item/:id" element={<ItemDetailContainer />} />
+                    <Route path="/item/:slug" element={<ItemDetailContainer />} />
                 </Routes>
-
                 <ToastContainer position="bottom-right" />
             </main>
         </>

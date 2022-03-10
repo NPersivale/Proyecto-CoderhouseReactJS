@@ -1,5 +1,7 @@
 import { ButtonGroup, Button } from "@mui/material";
 import { useState } from 'react';
+import { Link } from "react-router-dom";
+import { productsInitial } from "./ItemListContainer";
 
 
 const ItemCounter = (props) => {
@@ -23,15 +25,17 @@ const ItemCounter = (props) => {
         console.log("hay stock!");
     }
 
-
     return (
         <>
             <p>Units to purchase: {counter}</p>
-            <ButtonGroup className="ButtonGroup" variant="text" aria-label="text button group">
-                <Button onClick={subtractAmount} variant="contained" color="error" disabled={counter === 0}>-</Button>
-                <Button onClick={addItem} disabled={counter === 0}>Add To Cart</Button>
-                <Button onClick={addAmount} variant="contained" color="success" disabled={counter === props.stock}>+</Button>
-            </ButtonGroup>
+            <div>
+                <ButtonGroup className="ButtonGroup" aria-label="text button group">
+                    <Button onClick={subtractAmount} variant="contained" color="error" disabled={counter === 0}>-</Button>
+                    <Button id="addToCart" onClick={addItem} disabled={counter === 0}>Add To Cart</Button>
+                    <Button onClick={addAmount} variant="contained" color="success" disabled={counter === props.stock}>+</Button>
+                </ButtonGroup>
+                <Link className="styleRemove" to={/item/ + props.slug}><Button id="detailsButton" variant="contained">More Details</Button></Link>
+            </div>
         </>
     )
 }

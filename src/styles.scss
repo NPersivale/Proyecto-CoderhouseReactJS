@@ -28,7 +28,7 @@ footer{
     text-align: center;
 }
 
-main, #ItemListContainer{
+main, #ItemContainer{
     background-color: $color2;
 }
 
@@ -39,7 +39,7 @@ header {
     width: 100%;
 }
 
-#cartIcon{
+.navIcon{
     margin: 0 1rem 0 1rem;
 }
 
@@ -47,8 +47,12 @@ header {
     background-color: $color3;
 }
 
+.borders{
+    border-style: solid;
+}
+
 .active{
-    background-color: gray;
+    background-color: #808080;
     color: $color3 !important;
 }
 
@@ -67,19 +71,22 @@ header {
         border-radius: 0.3rem;
     }
 
-    #navButton:hover, #cartIcon:hover{
+    #navButton:hover, .navIcon:hover{
         background-color: gray;
         opacity: 30%;
         transform: scale(1.05);
-        transition: ease-in-out all 0.5s;
-        
+        transition: ease-in-out all 0.5s;   
+    }
+
+    .settingsNav{
+        padding-left: 4rem;
     }
 
     img{
-        height: 2rem;
+        height: 4rem;
     }
 
-    #userMenu{
+    #userMenu, #detailsButton{
         box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     }
 
@@ -89,8 +96,14 @@ header {
     }
 }
 
-#itemDetailContainer{
-    display: flex;
+#detailsButton{
+    margin-top: 0.5rem;
+    background-color: $color3;
+    width: 100%;
+}
+
+.styleRemove{
+    text-decoration: none !important;
 }
 
 #itemDetail{
@@ -115,8 +128,7 @@ header {
     justify-content: center;
 }
 
-
-#ItemListContainer{
+#ItemContainer{
     padding-top: 3rem;
     display: inline-flex;
     justify-content: space-evenly;
@@ -139,6 +151,12 @@ header {
 
 .ButtonGroup{
     background-color: white;
-    padding: 0.4rem;
+    padding: 0.5rem;
+    width: 100%;
     box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+
+    #addToCart{
+        flex-grow: 4;
+    }
 }
+

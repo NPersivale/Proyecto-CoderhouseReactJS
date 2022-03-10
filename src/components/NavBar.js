@@ -12,10 +12,11 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { NavLink } from "react-router-dom"
+import { Link, NavLink } from "react-router-dom"
+import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 
 
-const pages = [{ name: "All Products", url: "/" }, { name: "Escape From Tarkov", url: "/game/EFT" }, { name: "iRacing", url: "/game/iRacing" }, { name: "Star Citizen", url: "/game/StarCitizen" }];
+const pages = [{ name: "Escape From Tarkov", url: "EFT" }, { name: "iRacing", url: "iRacing" }, { name: "Star Citizen", url: "StarCitizen" }];
 const settings = ['Profile', 'Account', 'Past Orders', 'Logout'];
 
 const NavBar = () => {
@@ -47,11 +48,12 @@ const NavBar = () => {
                         component="div"
                         sx={{ mr: 2, display: { xs: 'none', md: 'flex' } }}
                     >
-                        <img id="jgLogo" src="/assets/justgaminglogo.png" alt="" />
-
+                        <Link to="/">
+                            <img id="jgLogo" src="/assets/justgaminglogo.png" alt="JustGaming Logo" />
+                        </Link>
                     </Typography>
 
-                    <Box sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
+                    <Box justifyContent="flex-start" sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}>
                         <IconButton
                             size="large"
                             aria-label="account of current user"
@@ -82,7 +84,7 @@ const NavBar = () => {
                         >
                             {pages.map((page) => (
                                 <MenuItem key={page.name} onClick={handleCloseNavMenu}>
-                                    <NavLink className="navLink" to={page.url}>{page.name}</NavLink>
+                                    <NavLink className="navLink" to={/game/ + page.url}>{page.name}</NavLink>
                                 </MenuItem>
                             ))}
                         </Menu>
@@ -93,24 +95,32 @@ const NavBar = () => {
                         component="div"
                         sx={{ flexGrow: 1, display: { xs: 'flex', md: 'none' } }}
                     >
-                        <img id="jgLogo" src="/assets/justgaminglogo.png" alt="" />
+                        <Link to="/">
+                            <img id="jgLogo" src="/assets/justgaminglogo.png" alt="JustGaming Logo" />
+                        </Link>
                     </Typography>
-                    <NavLink id="cartIcon" to="/cart/">
+
+                    <NavLink className="navIcon" to="/">
+                        <HomeOutlinedIcon />
+                    </NavLink>
+
+                    <NavLink className="navIcon" to="/cart/">
                         <CartWidget />
                     </NavLink>
-                    <Box sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
+
+                    <Box justifyContent="flex-end" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
                             <Button id="navButton"
                                 key={page.name}
                                 onClick={handleCloseNavMenu}
                                 sx={{ my: 2, color: 'black', display: 'block' }}
                             >
-                                <NavLink to={page.url}>{page.name}</NavLink>
+                                <NavLink to={/game/ + page.url}>{page.name}</NavLink>
                             </Button>
                         ))}
                     </Box>
 
-                    <Box sx={{ flexGrow: 0 }}>
+                    <Box className="settingsNav" sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
                             <IconButton id="userMenu" onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
