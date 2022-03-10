@@ -1,12 +1,16 @@
 # Important Project Information
 
 ## Required Libraries and Frameworks:
-- Node-SASS (v7.0.1 +)
 - MaterialUI (v5.4.4 +)
 - Material Icons (v5.4.4 +)
+- node-sass (v7.0.1 +)
+- react-router-dom (v6.2.2 +)
+- react-toastify (v8.2.0)
+
+
 
 ## Project Diagram:
-![Proyecto-CoderHouseReact js drawio](https://user-images.githubusercontent.com/67163082/157244404-fbbe9d0f-94ab-445d-b747-e3f9c9826174.png)
+![Proyecto-CoderHouseReact js drawio (1)](https://user-images.githubusercontent.com/67163082/157681749-64088788-a38e-4258-a964-b199adcb34ca.png)
 
 
 # Getting Started with Create React App
