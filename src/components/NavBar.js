@@ -12,8 +12,8 @@ import Avatar from '@mui/material/Avatar';
 import Button from '@mui/material/Button';
 import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
-import { Link, NavLink } from "react-router-dom"
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
+import { Link, NavLink } from "react-router-dom"
 
 
 const pages = [{ name: "Escape From Tarkov", url: "EFT" }, { name: "iRacing", url: "iRacing" }, { name: "Star Citizen", url: "StarCitizen" }];

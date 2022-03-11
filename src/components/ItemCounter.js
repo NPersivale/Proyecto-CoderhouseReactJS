@@ -1,7 +1,6 @@
-import { ButtonGroup, Button } from "@mui/material";
 import { useState } from 'react';
+import { ButtonGroup, Button } from "@mui/material";
 import { Link } from "react-router-dom";
-import { productsInitial } from "./ItemListContainer";
 
 
 const ItemCounter = (props) => {

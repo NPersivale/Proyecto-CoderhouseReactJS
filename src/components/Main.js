@@ -1,10 +1,10 @@
 import ItemListContainer from "./ItemListContainer";
-import BackToTop from "./BackToTop";
 import ItemDetailContainer from "./ItemDetailContainer";
-import { ToastContainer } from "react-toastify";
-import 'react-toastify/dist/ReactToastify.css';
-import { Route, Routes } from "react-router-dom"
+import BackToTop from "./BackToTop";
 import Cart from "./Cart";
+import { ToastContainer } from "react-toastify";
+import { Route, Routes } from "react-router-dom"
+import 'react-toastify/dist/ReactToastify.css';
 
 
 const Main = () => {
