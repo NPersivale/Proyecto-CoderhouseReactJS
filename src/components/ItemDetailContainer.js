@@ -1,13 +1,9 @@
 import ItemDetail from "./ItemDetail";
 import { useState, useEffect } from "react";
-import { productsInitial } from "./ItemListContainer"
+import { productsInitial } from "./ProductsInitial"
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify";
 import CircularProgress from '@mui/material/CircularProgress';
-
-
-
-
 
 const ItemDetailContainer = () => {
 
@@ -40,6 +36,7 @@ const ItemDetailContainer = () => {
                 setLoading(false);
             })
     }, [])
+
 
 
     return (

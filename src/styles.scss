@@ -11,12 +11,13 @@ $color3: rgb(41, 41, 41);
     font-family: "Roboto";
 }
 
-main{
-    min-height: 83%;
+html, body, #root, #loading, #cartBackground{
+    height: 100vh;
 }
 
-html, body, #root{
-    height: 100vh;
+#root {
+    display: flex;
+    flex-direction: column;
 }
 
 header, footer{
@@ -75,7 +76,7 @@ header {
         background-color: gray;
         opacity: 30%;
         transform: scale(1.05);
-        transition: ease-in-out all 0.5s;   
+        transition: ease 0.5s;   
     }
 
     .settingsNav{
@@ -86,12 +87,8 @@ header {
         height: 4rem;
     }
 
-    #userMenu, #detailsButton{
-        box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
-    }
-
     #userMenu :hover {
-        transition: ease-in-out, 1s;
+        transition: ease, 1s;
         box-shadow: 0 4px 10px rgba(0, 0, 0, 0.2);
     }
 }
@@ -106,15 +103,59 @@ header {
     text-decoration: none !important;
 }
 
+.dropShadow{
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+}
+
 #itemDetail{
-    display: grid; 
+    display: inline-flex;
     width: 100%;
     margin: 2rem;
     padding: 2rem;
     text-align: center;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
+}
+
+.itemDetailImg, .itemDetailSpecs{
+    border-style: solid;
+    border-width: 0.1rem;
+    border-color: $color1;
+    display: flex;
+    margin: 1rem;
+    padding: 2rem;
+}
+
+.itemDescription{
+    flex-direction: column;
+}
+
+.itemDetailSpecs{
+    width: 50%;
+    flex-direction: column;
+    justify-content: start;
+    
+    h3{
+        align-self: center;
+        width: 100% !important;
+        margin-bottom: 3rem;
+    }
+}
+
+.itemDetailImg{
+    width: 50%;
+    height: 30rem;
+    justify-content: center;
+    align-content: center;
+    
+    img{
+        width: auto !important;
+        height: 100% !important;
+    }
+}
+
+#cartIcon{
+    color: black;
 }
 
 #storeItem, #cart{
@@ -124,8 +165,13 @@ header {
     text-align: center;
     display: grid;
     background-color: white;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
     justify-content: center;
+}
+
+#storeItem:hover{
+    transform: scale(1.05);
+    transition: ease 0.5s; 
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
 }
 
 #ItemContainer{
@@ -153,7 +199,6 @@ header {
     background-color: white;
     padding: 0.5rem;
     width: 100%;
-    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
 
     #addToCart{
         flex-grow: 4;

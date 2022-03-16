@@ -1,8 +1,6 @@
 import { useState } from "react"
 import Button from '@mui/material/Button';
 
-
-
 const Footer = () =>{
 
     const [dark, setDark] = useState(false);

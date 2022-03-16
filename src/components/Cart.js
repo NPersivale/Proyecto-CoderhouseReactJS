@@ -1,6 +1,8 @@
 const Cart = () => {
     return (
-        <div id="cart">Cart</div>
+        <div id="cartBackground">
+            <div id="cart" className="dropShadow">Cart</div>
+        </div>
     )
 }
 

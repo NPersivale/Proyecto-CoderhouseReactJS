@@ -122,7 +122,7 @@ const NavBar = () => {
 
                     <Box className="settingsNav" sx={{ flexGrow: 0 }}>
                         <Tooltip title="Open settings">
-                            <IconButton id="userMenu" onClick={handleOpenUserMenu} sx={{ p: 0 }}>
+                            <IconButton id="userMenu" className="dropShadow" onClick={handleOpenUserMenu} sx={{ p: 0 }}>
                                 <Avatar alt="Remy Sharp" src="/static/images/avatar/2.jpg" />
                             </IconButton>
                         </Tooltip>

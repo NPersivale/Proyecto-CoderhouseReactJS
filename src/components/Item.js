@@ -1,16 +1,14 @@
-import ItemCounter from "./ItemCounter";
-
+import InfoButton from "./InfoButton";
 
 const Item = (props) => {
 
     return (
-        <div id="storeItem">
+        <div id="storeItem" className="dropShadow">
             <h3>{props.name}</h3>
             <img src={props.img} />
-            <p>Price: ${props.price}</p>
+            <h5>Price: ${props.price}</h5>
             <div>
-                <p>Available Stock: {props.stock}</p>
-                <ItemCounter stock={props.stock} slug={props.slug} />
+                <InfoButton slug={props.slug} />
             </div>
         </div>
     )
