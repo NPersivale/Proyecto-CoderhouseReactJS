@@ -11,8 +11,8 @@ $color3: rgb(41, 41, 41);
     font-family: "Roboto";
 }
 
-html, body, #root, #loading, #cartBackground{
-    height: 100vh;
+html, body, main{
+    min-height: 85vh;
 }
 
 #root {
@@ -62,6 +62,13 @@ header {
     color: $color3;
     padding: 0.5rem 1.3rem 0.5rem 1.3rem;
     border-radius: 0.3rem;
+}
+
+#purchaseButton{
+    color: black;
+    width: 100%;
+    margin-top: 1rem;
+
 }
 
 #navbar{
@@ -126,6 +133,20 @@ header {
     padding: 2rem;
 }
 
+.itemDetailImg{
+    width: 50%;
+    height: 30rem;
+    justify-content: center;
+    align-content: center;
+    
+    img{
+        object-fit: contain !important;
+        max-width: 100% !important;
+        width: auto !important;
+        height: 100% !important;
+    }
+}
+
 .itemDescription{
     flex-direction: column;
 }
@@ -142,23 +163,56 @@ header {
     }
 }
 
-.itemDetailImg{
-    width: 50%;
-    height: 30rem;
-    justify-content: center;
-    align-content: center;
-    
-    img{
-        width: auto !important;
-        height: 100% !important;
-    }
-}
+
 
 #cartIcon{
     color: black;
 }
 
-#storeItem, #cart{
+#cart{
+    display: flex;
+    flex-direction: row;
+    height: 10%;
+    width: 100%;
+    margin: 2rem;
+    padding: 2rem;
+    background-color: white;
+
+    .cartText{
+        display:inline-flex;
+        width: 75%;
+        text-align: start;
+        align-items: center;
+    }
+
+    h3, p {
+        padding: 0 2rem 0 2rem;
+    }
+
+    .cartButtons{
+        width: 25%;
+        text-align: center;
+        align-self: center;
+
+        Button{
+            margin: 1rem;
+        }
+    }
+
+    img {
+        height: 10rem;
+        object-fit: contain !important;
+        max-width:10rem !important;
+        padding-right: 2rem;
+    }
+}
+
+.cartIsEmpty{
+    padding-top: 10rem;
+    text-align: center;
+}
+
+#storeItem{
     max-width: 17rem;
     margin: 2rem;
     padding: 2rem;
@@ -166,6 +220,10 @@ header {
     display: grid;
     background-color: white;
     justify-content: center;
+
+    img{
+        padding: 2rem;
+    }
 }
 
 #storeItem:hover{

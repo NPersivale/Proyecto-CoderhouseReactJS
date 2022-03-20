@@ -29,11 +29,7 @@ function ScrollTop(props) {
 
     return (
         <Zoom in={trigger}>
-            <Box
-                onClick={handleClick}
-                role="presentation"
-                sx={{ position: 'fixed', bottom: 16, right: 16 }}
-            >
+            <Box onClick={handleClick} role="presentation" sx={{ position: 'fixed', bottom: 16, right: 16 }}>
                 {children}
             </Box>
         </Zoom>

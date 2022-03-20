@@ -1,4 +1,4 @@
-import InfoButton from "./InfoButton";
+import InfoButton from "../components/InfoButton";
 
 const Item = (props) => {
 

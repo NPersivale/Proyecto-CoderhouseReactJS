@@ -1,5 +1,4 @@
-import Item from "./Item"
-
+import Item from "../pages/Item"
 const ItemList = (props) => {
 
     return (
