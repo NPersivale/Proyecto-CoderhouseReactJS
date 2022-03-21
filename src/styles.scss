@@ -11,7 +11,7 @@ $color3: rgb(41, 41, 41);
     font-family: "Roboto";
 }
 
-html, body, main{
+html, body, main, #cartBackground{
     min-height: 85vh;
 }
 
@@ -173,8 +173,8 @@ header {
     display: flex;
     flex-direction: row;
     height: 10%;
-    width: 100%;
-    margin: 2rem;
+    max-width: 100%;
+    margin: 1rem 2rem 0 2rem ;
     padding: 2rem;
     background-color: white;
 
@@ -207,10 +207,33 @@ header {
     }
 }
 
-.cartIsEmpty{
-    padding-top: 10rem;
-    text-align: center;
+#cartBackground{
+    padding: 2rem 0 2rem 0;
+    display: flex;
+    justify-content: start;
+    flex-direction: column;
+
+    .flexCart{
+        display: flex;
+        align-self: center;
+        margin-top: 10rem;
+    }
+    
+    .cartIsEmpty{
+        padding: 1rem;;
+        color: white;
+        background-color: $color1;
+        border-radius: 0.3rem;
+        border-style: solid;
+    }
+    
+    .cartIsEmpty:hover{
+        transform: scale(1.05);
+        transition: ease 0.5s; 
+        box-shadow: 0 4px 30px rgba(0, 0, 0, 0.2);
+    }
 }
+
 
 #storeItem{
     max-width: 17rem;

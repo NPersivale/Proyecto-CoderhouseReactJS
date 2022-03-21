@@ -1,4 +1,4 @@
-import { createContext, useState } from "react"
+import { createContext, useState, useEffect } from "react"
 import { toast } from "react-toastify";
 
 export const cartContext = createContext([]);
@@ -7,10 +7,16 @@ const { Provider } = cartContext;
 const CartProvider = ({ children }) => {
 
     const [cart, setCart] = useState([]);
+    const [totalPrice, setTotalPrice] = useState(0);
+    const [totalProds, setTotalProds] = useState(0);
+
+    const cartCheckout = ()=>{
+        toast.success("You've successfully checked out!");
+    }
 
     const addToCart = (product, count) => {
-        let cartProduct = { product, count }
-        let tempCart = []
+        let cartProduct = { product, count };
+        let tempCart = [];
 
         if (isInCart(product)) {
             cartProduct = cart.find(item => item.product === product)
@@ -20,18 +26,46 @@ const CartProvider = ({ children }) => {
             tempCart = [cartProduct, ...cart]
         }
         setCart(tempCart)
+
+        let tempTotalPrice = 0;
+        let tempTotalProds = 0;
+
+        tempTotalPrice = totalPrice;
+        tempTotalPrice += (product.price * count);
+        setTotalPrice(tempTotalPrice);
+
+        tempTotalProds = totalProds;
+        tempTotalProds += count;
+        setTotalProds(tempTotalProds);
     }
 
     const clearCart = () => {
         setCart([]);
+        setTotalPrice(0);
+        setTotalProds(0);
         toast.info("Cart deleted.");
     }
 
     const deleteFromCart = (product) => {
         if (isInCart(product)) {
-            const tempCart = cart.filter(item => item.product !== product)
-            setCart(tempCart)
+            let tempTotalPrice = 0;
+            let tempTotalProds = 0;
+            const tempCart = cart.filter(item => item.product !== product);
+
+            tempCart.forEach((item) => {
+                tempTotalPrice += (item.product.price * item.count);
+                setTotalPrice(tempTotalPrice);
+
+                tempTotalProds += item.count;
+                setTotalProds(tempTotalProds);
+            })
+
+            setCart(tempCart);
             toast.info(product.name + " removed from your cart.");
+
+            if (tempCart.length == 0){
+                clearCart();
+            }
         }
     }
 
@@ -40,7 +74,7 @@ const CartProvider = ({ children }) => {
     }
 
     return (
-        <Provider value={{ cart, deleteFromCart, addToCart, clearCart }}>
+        <Provider value={{ cart, deleteFromCart, addToCart, clearCart, totalPrice, totalProds, cartCheckout }}>
             {children}
         </Provider>
     )

@@ -6,11 +6,11 @@ import { Badge } from '@mui/material';
 const CartWidget = () => {
 
     const useCartContext = useContext(cartContext);
-    const { cart } = useCartContext;
+    const { totalProds } = useCartContext;
 
     return (
         <>
-            <Badge id="cartBadge" badgeContent={cart.length} color="info">
+            <Badge id="cartBadge" badgeContent={totalProds} color="info">
                 <ShoppingCartOutlinedIcon />
             </Badge>
         </>
