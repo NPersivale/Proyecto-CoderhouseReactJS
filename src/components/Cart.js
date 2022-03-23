@@ -1,4 +1,4 @@
-import { cartContext } from "../Context/CartContext";
+import { cartContext } from "./CartContext";
 import { useContext } from 'react';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom"

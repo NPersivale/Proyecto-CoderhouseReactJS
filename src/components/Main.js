@@ -1,7 +1,7 @@
 import ItemListContainer from "./ItemListContainer";
 import ItemDetailContainer from "./ItemDetailContainer";
 import BackToTop from "./BackToTop";
-import Cart from "../pages/Cart";
+import Cart from "./Cart";
 import { ToastContainer } from "react-toastify";
 import { Route, Routes } from "react-router-dom"
 import 'react-toastify/dist/ReactToastify.css';

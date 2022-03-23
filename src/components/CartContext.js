@@ -1,4 +1,4 @@
-import { createContext, useState, useEffect } from "react"
+import { createContext, useState } from "react"
 import { toast } from "react-toastify";
 
 export const cartContext = createContext([]);
@@ -10,7 +10,7 @@ const CartProvider = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalProds, setTotalProds] = useState(0);
 
-    const cartCheckout = ()=>{
+    const cartCheckout = () => {
         toast.success("You've successfully checked out!");
     }
 
@@ -63,7 +63,7 @@ const CartProvider = ({ children }) => {
             setCart(tempCart);
             toast.info(product.name + " removed from your cart.");
 
-            if (tempCart.length == 0){
+            if (tempCart.length == 0) {
                 clearCart();
             }
         }

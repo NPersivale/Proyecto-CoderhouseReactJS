@@ -1,5 +1,5 @@
 import ShoppingCartOutlinedIcon from '@mui/icons-material/ShoppingCartOutlined';
-import { cartContext } from "../Context/CartContext";
+import { cartContext } from "./CartContext";
 import { useContext } from 'react';
 import { Badge } from '@mui/material';
 
