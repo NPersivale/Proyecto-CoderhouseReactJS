@@ -14,14 +14,19 @@ const CartProvider = ({ children }) => {
         toast.success("You've successfully checked out!");
     }
 
+
     const addToCart = (product, count) => {
         let cartProduct = { product, count };
         let tempCart = [];
 
         if (isInCart(product)) {
             cartProduct = cart.find(item => item.product === product)
-            cartProduct.count = cartProduct.count + count
-            tempCart = [...cart]
+            if (cartProduct.count + count <= product.stock) {
+                cartProduct.count += count;
+            } else {
+                toast.error("You can't add more than " + product.stock + " units of " + product.name + " to your cart!");
+                return;
+            }
         } else {
             tempCart = [cartProduct, ...cart]
         }
