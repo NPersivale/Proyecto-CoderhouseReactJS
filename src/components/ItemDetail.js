@@ -6,6 +6,7 @@ import { Link, useNavigate } from 'react-router-dom';
 import { cartContext } from "./CartContext";
 import { useState, useContext } from 'react';
 
+
 const ItemDetail = (props) => {
     const [buttonHide, setButtonHide] = useState(true);
     const [unitsBought, setUnitsBought] = useState(0);

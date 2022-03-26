@@ -1,42 +1,51 @@
 import ItemList from "./ItemList"
+import { db } from "./Firebase";
 import { useState, useEffect } from "react"
 import { toast } from "react-toastify";
 import { useParams } from "react-router-dom"
 import CircularProgress from '@mui/material/CircularProgress';
-import { productsInitial } from "./ProductsInitial"
+import { query, where, getDocs, collection } from "firebase/firestore";
 
 const ItemListContainer = () => {
-
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
     const [products, setProducts] = useState([]);
     const { game } = useParams();
 
     useEffect(() => {
-        setLoading(true);
-        const PromiseTest = new Promise((res, rej) => {
-            setTimeout(() => {
-                res(productsInitial);
-            }, 2000)
-        })
-
-        PromiseTest
-            .then((res) => {
-                if (game != undefined) {
-                    const productsFiltered = productsInitial.filter(product => product.game === game)
-                    setProducts(productsFiltered)
-                } else {
-                    setProducts(productsInitial);
+        if (game !== undefined) {
+            const filteredDocuments = getDocs(query(collection(db, "products"), where("game", "==", game)));
+            filteredDocuments.then((snapshot) => {
+                setProducts(snapshot.docs.map(doc => ({
+                    ...doc.data(),
+                    id: doc.id
+                })));
+            })
+                .catch((rej) => {
+                    toast.error("Error when trying to load the products");
+                    setError(true);
+                })
+                .finally(() => {
+                    setLoading(false);
+                })
+        } else {
+            const documents = getDocs(collection(db, "products"));
+            documents.then((snapshot) => {
+                setProducts(snapshot.docs.map(doc => ({
+                    ...doc.data(),
+                    id: doc.id
+                })));
+            })
+                .catch((rej) => {
+                    toast.error("Error when trying to load the products");
+                    setError(true);
                 }
-            })
-            .catch((rej) => {
-                toast.error("Error when trying to load the products");
-                setError(true);
-            })
-            .finally(() => {
-                setLoading(false);
-            })
-    }, [game])
+                )
+                .finally(() => {
+                    setLoading(false);
+                })
+        }
+    }, [game]);
 
 
     return (

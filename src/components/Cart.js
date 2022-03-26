@@ -28,6 +28,7 @@ const Cart = () => {
                             </div>
                         ))
                     }
+
                         <div id="cart" className="dropShadow">
                             <div className="cartText">
                                 <h3>Cart Total: ${totalPrice}</h3>
