@@ -5,12 +5,14 @@
 - Material Icons (v5.4.4 +)
 - node-sass (v7.0.1 +)
 - react-router-dom (v6.2.2 +)
-- react-toastify (v8.2.0)
+- react-toastify (v8.2.0 +)
+- firebase (v9.6.9 +)
+
 
 
 
 ## Project Diagram:
-![Proyecto-CoderHouseReact js drawio](https://user-images.githubusercontent.com/67163082/159185426-7b2b5714-e32b-4377-bb55-73dc2ff19ba2.png)
+![Proyecto-CoderHouseReact js drawio (1)](https://user-images.githubusercontent.com/67163082/160218472-af6d1538-b6bb-4ff1-b7ae-a69fa746c11f.png)
 
 
 # Getting Started with Create React App
