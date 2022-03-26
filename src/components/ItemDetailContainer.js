@@ -4,7 +4,7 @@ import { useState, useEffect } from "react";
 import { useParams } from "react-router-dom"
 import { toast } from "react-toastify";
 import CircularProgress from '@mui/material/CircularProgress';
-import { doc, getDoc, query, where, getDocs, collection } from "firebase/firestore";
+import { query, where, getDocs, collection } from "firebase/firestore";
 
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
