@@ -16,10 +16,7 @@ const ItemDetailContainer = () => {
         const filteredDocuments = getDocs(query(collection(db, "products"), where("slug", "==", slug)));
 
         filteredDocuments.then((snapshot) => {
-            setObject(snapshot.docs.map(doc => ({
-                ...doc.data(),
-                id: doc.id
-            })));
+            setObject(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))[0]);
         })
             .catch((rej) => {
                 toast.error("Error when trying to load the product");
@@ -33,7 +30,7 @@ const ItemDetailContainer = () => {
 
     return (
         < div id="ItemContainer" >
-            {loading ? <div id="loading">< CircularProgress color="inherit" /> <h2>Loading, please wait...</h2></div > : <>{object.map((product) => { return <ItemDetail key={product.id} object={product} /> })}</>}
+            {loading ? <div id="loading">< CircularProgress color="inherit" /> <h2>Loading, please wait...</h2></div > : <ItemDetail key={object.id} object={object} />}
             {error ? <h2>Error when trying to load the page, please try again...</h2> : null}
         </div >
     )

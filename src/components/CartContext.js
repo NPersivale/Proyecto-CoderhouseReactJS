@@ -12,6 +12,9 @@ const CartProvider = ({ children }) => {
 
     const cartCheckout = () => {
         toast.success("You've successfully checked out!");
+        setCart([]);
+        setTotalPrice(0);
+        setTotalProds(0);
     }
 
 

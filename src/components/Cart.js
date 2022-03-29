@@ -1,4 +1,6 @@
 import { cartContext } from "./CartContext";
+import { db } from "./Firebase";
+import { query, where, getDocs, collection, addDoc, serverTimestamp } from "firebase/firestore";
 import { useContext } from 'react';
 import { Button } from "@mui/material";
 import { Link } from "react-router-dom"
@@ -9,6 +11,23 @@ const Cart = () => {
     const useCartContext = useContext(cartContext);
     const { cart, deleteFromCart, clearCart, totalPrice, totalProds, cartCheckout } = useCartContext;
 
+    const handleCheckout = () => {
+        const newOrder = {
+            buyer: {
+                name: "Tester 1",
+                phone: "(222) 222-2222",
+                email: "test1@test.com"
+            },
+            items: cart,
+            date: serverTimestamp(),
+            total: totalPrice
+        }
+        const ordersCollection = collection(db, "orders");
+        const order = addDoc(ordersCollection, newOrder);
+        cartCheckout();
+    }
+
+
     return (
         <>
             <div id="cartBackground">
@@ -18,7 +37,7 @@ const Cart = () => {
                             <div key={item.product.id} id="cart" className="dropShadow">
                                 <div className="cartText">
                                     <img src={item.product.img} />
-                                    <span><h3>Item:</h3><p>{item.product.name}</p></span>
+                                    <span><h3>Items:</h3><p>{item.product.name}</p></span>
                                     <span><h3>Item Price and Amount: </h3><p>${item.product.price} x {item.count} units</p></span>
                                     <span><h3>Total:</h3> <p>${item.product.price * item.count}</p></span>
                                 </div>
@@ -35,7 +54,7 @@ const Cart = () => {
                                 <h3>Total Products: {totalProds}</h3>
                             </div>
                             <div className="cartButtons">
-                                <Button onClick={cartCheckout} variant="contained" color="success">Checkout</Button>
+                                <Button onClick={handleCheckout} variant="contained" color="success">Checkout</Button>
                                 <Button onClick={clearCart} variant="contained" color="error">Clear Cart</Button>
                             </div>
                         </div>

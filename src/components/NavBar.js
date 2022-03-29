@@ -110,7 +110,7 @@ const NavBar = () => {
                         <HomeOutlinedIcon />
                     </NavLink>
 
-                    {{cart}.length === 0 || <NavLink className="navIcon" to="/cart/"><CartWidget /></NavLink>}
+                    {cart.length === 0 || <NavLink className="navIcon" to="/cart/"><CartWidget /></NavLink>}
 
                     <Box justifyContent="flex-end" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (
