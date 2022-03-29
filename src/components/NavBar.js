@@ -14,8 +14,6 @@ import Tooltip from '@mui/material/Tooltip';
 import MenuItem from '@mui/material/MenuItem';
 import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { Link, NavLink } from "react-router-dom"
-import { cartContext } from "./CartContext";
-import { useContext } from 'react';
 
 
 
@@ -23,9 +21,6 @@ const pages = [{ name: "Escape From Tarkov", url: "EFT" }, { name: "iRacing", ur
 const settings = ['Profile', 'Account', 'Past Orders', 'Logout'];
 
 const NavBar = () => {
-    const useCartContext = useContext(cartContext);
-    const { cart } = useCartContext;
-
     const [anchorElNav, setAnchorElNav] = React.useState(null);
     const [anchorElUser, setAnchorElUser] = React.useState(null);
 
@@ -110,7 +105,7 @@ const NavBar = () => {
                         <HomeOutlinedIcon />
                     </NavLink>
 
-                    {cart.length === 0 || <NavLink className="navIcon" to="/cart/"><CartWidget /></NavLink>}
+                    <NavLink className="navIcon" to="/cart/"><CartWidget /></NavLink>
 
                     <Box justifyContent="flex-end" sx={{ flexGrow: 1, display: { xs: 'none', md: 'flex' } }}>
                         {pages.map((page) => (

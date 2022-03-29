@@ -9,7 +9,6 @@ import { useState, useContext } from 'react';
 
 const ItemDetail = (props) => {
     const [buttonHide, setButtonHide] = useState(true);
-    const [unitsBought, setUnitsBought] = useState(0);
 
     const useCartContext = useContext(cartContext);
     const { addToCart } = useCartContext;
@@ -18,14 +17,10 @@ const ItemDetail = (props) => {
 
     const onAdd = (activeCounter) => {
         if (activeCounter != undefined) {
-            setUnitsBought(activeCounter);
             setButtonHide(false);
+            addToCart(props.object, activeCounter);
         }
         toast.success("You've added " + activeCounter + " items to the cart!");
-    }
-
-    const handlePurchase = () => {
-        addToCart(props.object, unitsBought);
     }
 
     return (
@@ -40,7 +35,7 @@ const ItemDetail = (props) => {
                     <p>Price: ${props.object.price}</p>
                     <p>Available Stock: {props.object.stock}</p>
                     <ItemCounter initial={1} stock={props.object.stock} onAdd={onAdd} />
-                    {buttonHide || <Link className="styleRemove" to="/cart/"><Button id="purchaseButton" onClick={handlePurchase} variant="contained" color="inherit">Purchase</Button></Link>}
+                    {buttonHide || <Link className="styleRemove" to="/cart/"><Button id="purchaseButton" variant="contained" color="inherit">Proceed to checkout</Button></Link>}
                 </div>
             </div>
             <div id="itemDetail" className="itemDescription dropShadow">
