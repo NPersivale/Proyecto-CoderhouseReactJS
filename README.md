@@ -12,8 +12,7 @@
 
 
 ## Project Diagram:
-![Proyecto-CoderHouseReact js drawio (2)](https://user-images.githubusercontent.com/67163082/160890791-1d687921-bda5-44a4-bfe8-5f04b9271fa8.png)
-
+![Proyecto-CoderHouseReact js drawio (3)](https://user-images.githubusercontent.com/67163082/160937673-63787c6a-40f6-42d5-9555-fb6d191f4ee0.png)
 
 # Getting Started with Create React App
 
