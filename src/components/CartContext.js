@@ -23,17 +23,19 @@ const CartProvider = ({ children }) => {
         let tempCart = [];
 
         if (isInCart(product)) {
-            cartProduct = cart.find(item => item.product === product)
+            cartProduct = cart.find(item => item.product.name === product.name)
             if (cartProduct.count + count <= product.stock) {
                 cartProduct.count += count;
+                toast.success("You've added " + count + " items to the cart!");
             } else {
                 toast.error("You can't add more than " + product.stock + " units of " + product.name + " to your cart!");
                 return;
             }
         } else {
+            toast.success("You've added " + count + " items to the cart!");
             tempCart = [cartProduct, ...cart]
+            setCart(tempCart)
         }
-        setCart(tempCart)
 
         let tempTotalPrice = 0;
         let tempTotalProds = 0;
@@ -78,7 +80,7 @@ const CartProvider = ({ children }) => {
     }
 
     const isInCart = (product) => {
-        return cart && cart.some(item => item.product === product);
+        return cart && cart.some(item => item.product.name === product.name);
     }
 
     return (

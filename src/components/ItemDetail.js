@@ -20,7 +20,6 @@ const ItemDetail = (props) => {
             setButtonHide(false);
             addToCart(props.object, activeCounter);
         }
-        toast.success("You've added " + activeCounter + " items to the cart!");
     }
 
     return (
