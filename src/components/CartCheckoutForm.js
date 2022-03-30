@@ -26,7 +26,10 @@ const CartCheckoutForm = (props) => {
         }
         const ordersCollection = collection(db, "orders");
         const order = addDoc(ordersCollection, newOrder);
-        cartCheckout();
+        order.then((res) => {
+            const orderId = res.id;
+            cartCheckout(orderId);
+        });
     }
 
     const handleNameChange = (e) => {

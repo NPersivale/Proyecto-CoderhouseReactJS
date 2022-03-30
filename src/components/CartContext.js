@@ -10,8 +10,8 @@ const CartProvider = ({ children }) => {
     const [totalPrice, setTotalPrice] = useState(0);
     const [totalProds, setTotalProds] = useState(0);
 
-    const cartCheckout = () => {
-        toast.success("Congratulations! Your purchase has been completed!");
+    const cartCheckout = (orderId) => {
+        toast.success("Congratulations! Your purchase has been completed! The order id is: " + orderId, { autoClose: false, });
         setCart([]);
         setTotalPrice(0);
         setTotalProds(0);
