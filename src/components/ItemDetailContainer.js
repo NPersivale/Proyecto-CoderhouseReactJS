@@ -20,7 +20,7 @@ const ItemDetailContainer = () => {
         filteredDocuments.then((snapshot) => {
             setObject(snapshot.docs.map(doc => ({ ...doc.data(), id: doc.id }))[0]);
         })
-            .catch((rej) => {
+            .catch(() => {
                 toast.error("Error when trying to load the product");
                 setError(true);
             })

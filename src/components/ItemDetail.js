@@ -15,7 +15,7 @@ const ItemDetail = (props) => {
     const navigate = useNavigate();
 
     const onAdd = (activeCounter) => {
-        if (activeCounter != undefined) {
+        if (activeCounter !== undefined) {
             setButtonHide(false);
             addToCart(props.object, activeCounter);
         }
@@ -26,7 +26,7 @@ const ItemDetail = (props) => {
             <Button variant="contained" color="inherit"><ArrowBackOutlinedIcon fontSize="large" onClick={() => navigate(-1)} /></Button>
             <div id="itemDetail" className="dropShadow">
                 <div className="itemDetailImg dropShadow">
-                    <img src={props.object.img} />
+                    <img alt="" src={props.object.img} />
                 </div>
                 <div className="itemDetailSpecs dropShadow" >
                     <h3>{props.object.name}</h3>

@@ -23,7 +23,7 @@ const ItemListContainer = () => {
                     id: doc.id
                 })));
             })
-                .catch((rej) => {
+                .catch(() => {
                     toast.error("Error when trying to load the products");
                     setError(true);
                 })
@@ -38,7 +38,7 @@ const ItemListContainer = () => {
                     id: doc.id
                 })));
             })
-                .catch((rej) => {
+                .catch(() => {
                     toast.error("Error when trying to load the products");
                     setError(true);
                 }

@@ -1,5 +1,4 @@
 import * as React from 'react';
-import Toolbar from '@mui/material/Toolbar';
 import useScrollTrigger from '@mui/material/useScrollTrigger';
 import Box from '@mui/material/Box';
 import Fab from '@mui/material/Fab';
@@ -14,8 +13,8 @@ function ScrollTop(props) {
         threshold: 100,
     });
 
-    const handleClick = (event) => {
-        const anchor = (event.target.ownerDocument || document).querySelector(
+    const handleClick = (e) => {
+        const anchor = (e.target.ownerDocument || document).querySelector(
             '#back-to-top-anchor',
         );
 
@@ -40,7 +39,6 @@ function ScrollTop(props) {
 export default function BackToTop(props) {
     return (
         <React.Fragment>
-            <Toolbar id="back-to-top-anchor" />
             <ScrollTop {...props}>
                 <Fab id="backtotop" color="primary" size="small" aria-label="scroll back to top">
                     <KeyboardArrowUpIcon />

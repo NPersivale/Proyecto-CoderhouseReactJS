@@ -41,34 +41,35 @@ const CartCheckoutForm = (props) => {
 
     const handleNameChange = (e) => {
         setBuyerName(e.target.value);
-        setValidName(validator.isAlpha(buyerName, "es-ES", { ignore: " " }));
     }
 
     const handleEmailChange = (e) => {
         setBuyerEmail(e.target.value);
-        setValidEmail(validator.isEmail(buyerEmail));
     }
 
     const handleEmailConfChange = (e) => {
         setBuyerEmailConf(e.target.value);
     }
 
-    useEffect(() => {
-        setValidEmailConf(validator.equals(buyerEmail, buyerEmailConf));
-    }, [buyerEmail, buyerEmailConf]);
-
     const handlePhoneChange = (e) => {
         setBuyerPhone(e.target.value);
-        setValidPhone(validator.isNumeric(buyerPhone, "es-ES"));
     }
+
+    useEffect(() => {
+        setValidName(validator.isAlpha(buyerName, "es-ES", { ignore: " " }));
+        setValidEmail(validator.isEmail(buyerEmail));
+        setValidEmailConf(validator.equals(buyerEmail, buyerEmailConf));
+        setValidPhone(validator.isNumeric(buyerPhone, "es-ES"));
+    }, [buyerName, buyerEmail, buyerEmailConf, buyerPhone]);
+
 
     return (
         <>
             <h2>Checkout Information:</h2>
-            <TextField className="formItems" error={buyerName != "" && !validName} required variant="filled" label="Full Name" onChange={handleNameChange} value={buyerName} />
-            <TextField className="formItems" error={buyerPhone != "" && !validPhone} required variant="filled" label="Phone Number" onChange={handlePhoneChange} value={buyerPhone} />
-            <TextField className="formItems" error={buyerEmail != "" && !validEmail} required variant="filled" label="Email Address" onChange={handleEmailChange} value={buyerEmail} />
-            <TextField className="formItems" error={buyerEmailConf != "" && !validEmailConf} required variant="filled" label="Confirm Email Address" onChange={handleEmailConfChange} value={buyerEmailConf} />
+            <TextField className="formItems" error={buyerName !== "" && !validName} required variant="filled" label="Full Name" onChange={handleNameChange} value={buyerName} />
+            <TextField className="formItems" error={buyerPhone !== "" && !validPhone} required variant="filled" label="Phone Number" onChange={handlePhoneChange} value={buyerPhone} />
+            <TextField className="formItems" error={buyerEmail !== "" && !validEmail} required variant="filled" label="Email Address" onChange={handleEmailChange} value={buyerEmail} />
+            <TextField className="formItems" error={buyerEmailConf !== "" && !validEmailConf} required variant="filled" label="Confirm Email Address" onChange={handleEmailConfChange} value={buyerEmailConf} />
             <div className="cartFooter dropShadow cart">
                 <div className="cartText">
                     <h3>Cart Total: ${totalPrice}</h3>

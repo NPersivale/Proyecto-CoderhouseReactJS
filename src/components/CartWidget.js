@@ -10,11 +10,9 @@ const CartWidget = () => {
     const { totalProds } = useCartContext;
 
     return (
-        <>
-            <Badge id="cartBadge" badgeContent={totalProds} color="info">
-                <ShoppingCartOutlinedIcon />
-            </Badge>
-        </>
+        <Badge id="cartBadge" badgeContent={totalProds} color="info">
+            <ShoppingCartOutlinedIcon />
+        </Badge>
     )
 }
 
