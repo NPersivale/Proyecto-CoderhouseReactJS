@@ -10,14 +10,13 @@ import validator from "validator";
 const CartCheckoutForm = (props) => {
     const useCartContext = useContext(cartContext);
     const { clearCart, totalPrice, totalProds, cartCheckout } = useCartContext;
-
     const [buyerName, setBuyerName] = useState("");
     const [buyerEmail, setBuyerEmail] = useState("");
     const [buyerPhone, setBuyerPhone] = useState("");
+    const [validName, setValidName] = useState(false);
+    const [validEmail, setValidEmail] = useState(false);
+    const [validPhone, setValidPhone] = useState(false);
 
-    const validName = validator.isAlpha(buyerName, "es-ES", { ignore: " " });
-    const validEmail = validator.isEmail(buyerEmail);
-    const validPhone = validator.isNumeric(buyerPhone, "es-ES");
 
     const handleCheckout = () => {
         const newOrder = {
@@ -40,29 +39,32 @@ const CartCheckoutForm = (props) => {
 
     const handleNameChange = (e) => {
         setBuyerName(e.target.value);
+        setValidName(validator.isAlpha(buyerName, "es-ES", { ignore: " " }));
     }
 
     const handleEmailChange = (e) => {
         setBuyerEmail(e.target.value);
+        setValidEmail(validator.isEmail(buyerEmail));
     }
 
     const handlePhoneChange = (e) => {
         setBuyerPhone(e.target.value);
+        setValidPhone(validator.isNumeric(buyerPhone, "es-ES"));
     }
 
     return (
         <>
             <h2>Checkout Information:</h2>
-            <TextField className="formItems" error={!validName} helperText="Please enter a valid name" required variant="filled" label="Full Name" onChange={handleNameChange} value={buyerName} />
-            <TextField className="formItems" error={!validPhone} helperText="Please enter a valid phone number" required variant="filled" label="Phone Number" onChange={handlePhoneChange} value={buyerPhone} />
-            <TextField className="formItems" error={!validEmail} helperText="Please enter a valid email address" required variant="filled" label="Email Address" onChange={handleEmailChange} value={buyerEmail} />
+            <TextField className="formItems" error={buyerName != "" && !validName} required variant="filled" label="Full Name" onChange={handleNameChange} value={buyerName} />
+            <TextField className="formItems" error={buyerPhone != "" && !validPhone} required variant="filled" label="Phone Number" onChange={handlePhoneChange} value={buyerPhone} />
+            <TextField className="formItems" error={buyerEmail != "" && !validEmail} required variant="filled" label="Email Address" onChange={handleEmailChange} value={buyerEmail} />
             <div className="cartFooter dropShadow cart">
                 <div className="cartText">
                     <h3>Cart Total: ${totalPrice}</h3>
                     <h3>Total Products: {totalProds}</h3>
                 </div>
                 <div className="cartButtons">
-                    <Button onClick={handleCheckout} variant="contained" disabled={!validName || !validEmail || !validPhone} color="success">Complete Purchase</Button>
+                    <Button onClick={handleCheckout} variant="contained" disabled={(!validName || !validEmail || !validPhone)} color="success">Complete Purchase</Button>
                     <Button onClick={clearCart} variant="contained" color="error">Clear Cart</Button>
                 </div>
             </div>
