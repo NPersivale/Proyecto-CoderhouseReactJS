@@ -1,3 +1,6 @@
+Netlify Build Badge: 
+[![Netlify Status](https://api.netlify.com/api/v1/badges/fb263562-58bb-4bb0-9edf-08e9780fee94/deploy-status)](https://app.netlify.com/sites/glittering-chimera-60dd18/deploys)
+
 # Important Project Information
 
 ## Required Libraries and Frameworks:
