@@ -16,4 +16,4 @@
 
 
 ## Project Diagram:
-![Proyecto-CoderHouseReact js drawio (3)](https://user-images.githubusercontent.com/67163082/160937673-63787c6a-40f6-42d5-9555-fb6d191f4ee0.png)
+![Proyecto-CoderHouseReact js drawio (4)](https://user-images.githubusercontent.com/67163082/161132627-53400ec4-d8d2-4144-952d-43a6da9f13ae.png)
