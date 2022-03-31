@@ -9,6 +9,8 @@
 - react-router-dom (v6.2.2 +)
 - react-toastify (v8.2.0 +)
 - firebase (v9.6.9 +)
+- validator (v13.7.0 +)
+
 
 
 
