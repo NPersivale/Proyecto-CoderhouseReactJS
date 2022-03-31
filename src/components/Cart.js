@@ -11,7 +11,7 @@ const Cart = () => {
 
     return (
         <div id="cartBackground">
-            {cart.length == 0
+            {cart.length === 0
                 ? <Link className="styleRemove flexCart" to="/"><Button className="cartIsEmpty dropShadow" color="inherit"><h2>Cart is empty - Click to go back to the Store</h2></Button></Link>
                 : <CartContainer cart={cart} />
             }

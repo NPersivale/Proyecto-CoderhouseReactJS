@@ -78,7 +78,7 @@ const CartProvider = ({ children }) => {
             const tempCart = cart.filter(item => item.product !== product);
             setCart(tempCart);
             toast.info(product.name + " removed from your cart.");
-            if (tempCart.length == 0) {
+            if (tempCart.length === 0) {
                 clearCart();
             }
         }
