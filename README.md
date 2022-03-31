@@ -3,6 +3,7 @@
 # Important Project Information
 
 ## Project Description:
+Project description will go here.
 
 
 ## Required Libraries and Frameworks:
@@ -15,9 +16,9 @@
 - validator (v13.7.0 +)
 
 ## Installation Process:
-1. Download the latest version of npm, on the command line, run the following command: npm install -g npm
-2. Clone the project on your PC. On the command line, run the following command: gh repo clone https://github.com/NPersivale/Proyecto-CoderhouseReactJS
-3. Start the repository. On the command line, run the following command: npm start
+1. Download the latest version of npm, on the command line, run the following command: **npm install -g npm**
+2. Clone the project on your PC. On the command line, run the following command: **gh repo clone https://github.com/NPersivale/Proyecto-CoderhouseReactJS**
+3. Start the repository. On the command line, run the following command: **npm start**
 
 
 ## How to Use:
