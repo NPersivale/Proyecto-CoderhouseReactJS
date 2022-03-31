@@ -29,11 +29,15 @@ const ItemDetail = (props) => {
                     <img alt="" src={props.object.img} />
                 </div>
                 <div className="itemDetailSpecs dropShadow" >
-                    <h3>{props.object.name}</h3>
-                    <p>Price: ${props.object.price}</p>
-                    <p>Available Stock: {props.object.stock}</p>
-                    <ItemCounter initial={1} stock={props.object.stock} onAdd={onAdd} />
-                    {buttonHide || <Link className="styleRemove" to="/cart/"><Button id="purchaseButton" variant="contained" color="inherit">Proceed to checkout</Button></Link>}
+                    <div className="itemDetailInfo">
+                        <h2>{props.object.name}</h2>
+                        <h3>Price: ${props.object.price}</h3>
+                    </div>
+                    <div className="itemDetailButtons">
+                        <p>Available Stock: {props.object.stock}</p>
+                        <ItemCounter initial={1} stock={props.object.stock} onAdd={onAdd} />
+                        {buttonHide || <Link className="styleRemove" to="/cart/"><Button id="purchaseButton" variant="contained" color="inherit">Proceed to checkout</Button></Link>}
+                    </div>
                 </div>
             </div>
             <div id="itemDetail" className="itemDescription dropShadow">

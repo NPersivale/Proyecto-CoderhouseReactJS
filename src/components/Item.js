@@ -5,9 +5,9 @@ const Item = (props) => {
 
     return (
         <div id="storeItem" className="dropShadow">
-            <h3>{props.name}</h3>
+            <h2>{props.name}</h2>
             <img alt="" src={props.img} />
-            <h5>Price: ${props.price}</h5>
+            <h3>Price: ${props.price}</h3>
             <div>
                 <InfoButton slug={props.slug} />
             </div>
