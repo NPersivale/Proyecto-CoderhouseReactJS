@@ -1,7 +1,7 @@
 import { db } from "./Firebase";
 import { cartContext } from "./CartContext";
 import { collection, addDoc, serverTimestamp } from "firebase/firestore";
-import { useContext, useState } from 'react';
+import { useContext, useState, useEffect } from 'react';
 import { Button } from "@mui/material";
 import TextField from '@mui/material/TextField';
 import validator from "validator";
@@ -12,9 +12,11 @@ const CartCheckoutForm = (props) => {
     const { clearCart, totalPrice, totalProds, cartCheckout } = useCartContext;
     const [buyerName, setBuyerName] = useState("");
     const [buyerEmail, setBuyerEmail] = useState("");
+    const [buyerEmailConf, setBuyerEmailConf] = useState("");
     const [buyerPhone, setBuyerPhone] = useState("");
     const [validName, setValidName] = useState(false);
     const [validEmail, setValidEmail] = useState(false);
+    const [validEmailConf, setValidEmailConf] = useState(false);
     const [validPhone, setValidPhone] = useState(false);
 
 
@@ -47,6 +49,14 @@ const CartCheckoutForm = (props) => {
         setValidEmail(validator.isEmail(buyerEmail));
     }
 
+    const handleEmailConfChange = (e) => {
+        setBuyerEmailConf(e.target.value);
+    }
+
+    useEffect(() => {
+        setValidEmailConf(validator.equals(buyerEmail, buyerEmailConf));
+    }, [buyerEmail, buyerEmailConf]);
+
     const handlePhoneChange = (e) => {
         setBuyerPhone(e.target.value);
         setValidPhone(validator.isNumeric(buyerPhone, "es-ES"));
@@ -58,13 +68,14 @@ const CartCheckoutForm = (props) => {
             <TextField className="formItems" error={buyerName != "" && !validName} required variant="filled" label="Full Name" onChange={handleNameChange} value={buyerName} />
             <TextField className="formItems" error={buyerPhone != "" && !validPhone} required variant="filled" label="Phone Number" onChange={handlePhoneChange} value={buyerPhone} />
             <TextField className="formItems" error={buyerEmail != "" && !validEmail} required variant="filled" label="Email Address" onChange={handleEmailChange} value={buyerEmail} />
+            <TextField className="formItems" error={buyerEmailConf != "" && !validEmailConf} required variant="filled" label="Confirm Email Address" onChange={handleEmailConfChange} value={buyerEmailConf} />
             <div className="cartFooter dropShadow cart">
                 <div className="cartText">
                     <h3>Cart Total: ${totalPrice}</h3>
                     <h3>Total Products: {totalProds}</h3>
                 </div>
                 <div className="cartButtons">
-                    <Button onClick={handleCheckout} variant="contained" disabled={(!validName || !validEmail || !validPhone)} color="success">Complete Purchase</Button>
+                    <Button onClick={handleCheckout} variant="contained" disabled={(!validName || !validEmail || !validEmailConf || !validPhone)} color="success">Complete Purchase</Button>
                     <Button onClick={clearCart} variant="contained" color="error">Clear Cart</Button>
                 </div>
             </div>
