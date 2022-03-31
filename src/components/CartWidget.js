@@ -3,6 +3,7 @@ import { cartContext } from "./CartContext";
 import { useContext } from 'react';
 import { Badge } from '@mui/material';
 
+
 const CartWidget = () => {
 
     const useCartContext = useContext(cartContext);

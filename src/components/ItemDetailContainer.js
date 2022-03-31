@@ -6,6 +6,7 @@ import { toast } from "react-toastify";
 import CircularProgress from '@mui/material/CircularProgress';
 import { query, where, getDocs, collection } from "firebase/firestore";
 
+
 const ItemDetailContainer = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -13,6 +14,7 @@ const ItemDetailContainer = () => {
     const { slug } = useParams();
 
     useEffect(() => {
+        setLoading(true);
         const filteredDocuments = getDocs(query(collection(db, "products"), where("slug", "==", slug)));
 
         filteredDocuments.then((snapshot) => {

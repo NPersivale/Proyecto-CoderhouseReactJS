@@ -16,7 +16,6 @@ import HomeOutlinedIcon from '@mui/icons-material/HomeOutlined';
 import { Link, NavLink } from "react-router-dom"
 
 
-
 const pages = [{ name: "Escape From Tarkov", url: "EFT" }, { name: "iRacing", url: "iRacing" }, { name: "Star Citizen", url: "StarCitizen" }];
 const settings = ['Profile', 'Account', 'Past Orders', 'Logout'];
 

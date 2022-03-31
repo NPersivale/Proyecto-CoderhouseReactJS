@@ -1,8 +1,10 @@
 import { createContext, useState, useEffect } from "react"
 import { toast } from "react-toastify";
 
+
 export const cartContext = createContext([]);
 const { Provider } = cartContext;
+
 
 const CartProvider = ({ children }) => {
     const [cart, setCart] = useState([]);

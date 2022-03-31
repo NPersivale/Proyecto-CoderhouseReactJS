@@ -6,6 +6,7 @@ import { useParams } from "react-router-dom"
 import CircularProgress from '@mui/material/CircularProgress';
 import { query, where, getDocs, collection } from "firebase/firestore";
 
+
 const ItemListContainer = () => {
     const [loading, setLoading] = useState(true);
     const [error, setError] = useState(false);
@@ -13,6 +14,7 @@ const ItemListContainer = () => {
     const { game } = useParams();
 
     useEffect(() => {
+        setLoading(true);
         if (game !== undefined) {
             const filteredDocuments = getDocs(query(collection(db, "products"), where("game", "==", game)));
             filteredDocuments.then((snapshot) => {

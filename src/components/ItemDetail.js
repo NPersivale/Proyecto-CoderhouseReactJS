@@ -1,7 +1,6 @@
 import ItemCounter from './ItemCounter';
 import Button from '@mui/material/Button';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
-import { toast } from "react-toastify"
 import { Link, useNavigate } from 'react-router-dom';
 import { cartContext } from "./CartContext";
 import { useState, useContext } from 'react';

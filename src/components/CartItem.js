@@ -3,8 +3,6 @@ import { useContext } from 'react';
 import { cartContext } from "./CartContext";
 
 
-
-
 const CartItem = (props) => {
     const useCartContext = useContext(cartContext);
     const { deleteFromCart } = useCartContext;
