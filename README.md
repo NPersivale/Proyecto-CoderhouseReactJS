@@ -7,7 +7,7 @@
 ## Project Description:
 This is my final project for the ReactJS course at CoderHouse, part of the front-end web developer career. This project consists of an ecommerce implemented with React together with React Router, React Hooks, Material UI Library as the main framework for React components, Validator for formulary data validation, React Toastify for notifications and using Firebase as a database.
 
-Please keep in mind that no further libraries or frameworks were used on this project as only vanilla Javascript was give to us in order to program it.
+Please keep in mind that no further libraries or frameworks were used on this project as only vanilla Javascript was allowed in order to develop it.
 
 
 
@@ -36,7 +36,7 @@ Please keep in mind that no further libraries or frameworks were used on this pr
 
 
 ## How to Use:
-1. Select the desired product(s) from the store. Please note that products can be filtered by game (category) if desired.
+1. Browse through the store and filter by category (game). Select the desired product(s) and add it to the cart
 2. Go to the shopping cart and review selected items.
 4. Fill the required information in the form located on the right-hand side.
 5. Complete the purchase by clicking the green button that's labeled with the same legend.
