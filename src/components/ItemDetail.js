@@ -1,7 +1,7 @@
 import ItemCounter from './ItemCounter';
 import Button from '@mui/material/Button';
 import ArrowBackOutlinedIcon from '@mui/icons-material/ArrowBackOutlined';
-import { Link, useNavigate } from 'react-router-dom';
+import { Link } from 'react-router-dom';
 import { cartContext } from "./CartContext";
 import { useState, useContext } from 'react';
 
@@ -11,8 +11,6 @@ const ItemDetail = (props) => {
 
     const useCartContext = useContext(cartContext);
     const { addToCart } = useCartContext;
-
-    const navigate = useNavigate();
 
     const onAdd = (activeCounter) => {
         if (activeCounter !== undefined) {
@@ -24,7 +22,7 @@ const ItemDetail = (props) => {
     return (
         <>
             <div id="itemDetail" className="dropShadow">
-                <Button variant="contained" color="inherit"><ArrowBackOutlinedIcon fontSize="large" onClick={() => navigate(-1)} /></Button>
+                <Button variant="contained" color="inherit"><ArrowBackOutlinedIcon fontSize="large" onClick={() => { window.history.go(-1) }} /></Button>
                 <div className="itemDetailImg dropShadow">
                     <img alt="" src={props.object.img} />
                 </div>
