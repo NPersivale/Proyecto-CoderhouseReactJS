@@ -7,7 +7,7 @@
 ## Project Description:
 This is my final project for the ReactJS course at CoderHouse, part of the front-end web developer career. This project consists of an ecommerce implemented with React together with React Router, React Hooks, Material UI Library as the main framework for React components, Validator for formulary data validation, React Toastify for notifications and using Firebase as a database.
 
-Please keep in mind that no further libraries or frameworks were used on this project as only vanilla Javascript was give to us in order to program it.
+Please keep in mind that no further libraries or frameworks were used on this project as only vanilla Javascript was allowed in order to develop it.
 
 
 
