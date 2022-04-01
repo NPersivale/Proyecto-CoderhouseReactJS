@@ -23,14 +23,18 @@ const ItemDetail = (props) => {
 
     return (
         <>
-            <Button variant="contained" color="inherit"><ArrowBackOutlinedIcon fontSize="large" onClick={() => navigate(-1)} /></Button>
             <div id="itemDetail" className="dropShadow">
+                <Button variant="contained" color="inherit"><ArrowBackOutlinedIcon fontSize="large" onClick={() => navigate(-1)} /></Button>
                 <div className="itemDetailImg dropShadow">
                     <img alt="" src={props.object.img} />
                 </div>
                 <div className="itemDetailSpecs dropShadow" >
                     <div className="itemDetailInfo">
                         <h2>{props.object.name}</h2>
+                        <div className="itemDescription">
+                            <h3 className='itemDescriptionTitle' >Item Description:</h3>
+                            {props.object.description}
+                        </div>
                         <h3>Price: ${props.object.price}</h3>
                     </div>
                     <div className="itemDetailButtons">
@@ -39,10 +43,6 @@ const ItemDetail = (props) => {
                         {buttonHide || <Link className="styleRemove" to="/cart/"><Button id="purchaseButton" variant="contained" color="inherit">Proceed to checkout</Button></Link>}
                     </div>
                 </div>
-            </div>
-            <div id="itemDetail" className="itemDescription dropShadow">
-                <h2>Item Description:</h2>
-                {props.object.description}
             </div>
         </>
     )

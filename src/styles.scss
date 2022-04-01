@@ -144,7 +144,20 @@ main, #ItemContainer{
 }
 
 .itemDescription{
+    text-align: left !important;
     flex-direction: column;
+    padding: 2rem;
+    border-radius: 0.3rem;
+    margin: 2rem 0 2rem 0 ;
+
+    h2{
+        font-size: 1.5rem;
+        margin-bottom: 1rem;
+    }
+
+    .itemDescriptionTitle{
+        text-align: center !important;
+    }
 }
 
 .itemDetailSpecs{
@@ -156,6 +169,7 @@ main, #ItemContainer{
     h3{
         align-self: center;
     }
+    
 
     .itemDetailInfo{
         display: flex;
@@ -168,6 +182,7 @@ main, #ItemContainer{
             padding-top: 2rem;
         }
     }
+
     
     .itemDetailButtons{
         display: flex;
