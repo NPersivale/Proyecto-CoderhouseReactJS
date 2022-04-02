@@ -22,7 +22,10 @@ Please keep in mind that no further libraries or frameworks were used on this pr
 
 
 
-## Installation Process:
+## Installation Process From Scratch (see notes below):
+   *Please keep in mind that, in case that you've already have installed and configured Node.js, GitHub CLI and NPM, you should then **skip steps 1-5** and start from step number 6.*
+   
+   
 1. Download and install Node.js
 
    **https://nodejs.org/en/download/**
@@ -54,8 +57,7 @@ Please keep in mind that no further libraries or frameworks were used on this pr
 8. Start the repository. On the command line, run the following command: 
    
    **npm start**
-
-
+   
 
 ## How to Use:
 1. Browse through the store and filter by category (game). Select the desired product(s) and add it to the cart
