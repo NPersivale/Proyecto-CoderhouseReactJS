@@ -23,13 +23,35 @@ Please keep in mind that no further libraries or frameworks were used on this pr
 
 
 ## Installation Process:
-1. Download the latest version of npm. On the command line (cmd for example), run the following command:
+1. Download and install Node.js
+
+   **https://nodejs.org/en/download/**
+   
+2. Download GitHub CLI
+
+   **https://cli.github.com/**
+   
+3. Install GitHub CLI. On the command line (cmd for example), run the following command:
+
+   **winget install --id GitHub.cli**
+   
+4. Login to your GitHub account on GitHub CLI. On the command line, run the following command:
+
+   **gh auth login**
+
+5. Download the latest version of npm. On the command line, run the following command:
 
    **npm install -g npm**
-3. Clone the project on your PC. On the command line, run the following command: 
    
-   **gh repo clone https://github.com/NPersivale/Proyecto-CoderhouseReactJS**
-5. Start the repository. On the command line, run the following command: 
+6. Clone the project on your PC. On the command line, run the following command: 
+   
+   **gh repo clone https://github.com/NPersivale/Proyecto-CoderhouseReactJS.git**
+   
+7. Install the necessary repository dependencies. On the command line, run the following command:
+
+   **npm install**
+
+8. Start the repository. On the command line, run the following command: 
    
    **npm start**
 
